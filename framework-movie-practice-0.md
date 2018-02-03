@@ -1,6 +1,6 @@
 # Movie List App
 
-Use any framework you want to create a movie list app! The levels get increasingly difficult and some refactoring may be necessary. Images accompany each level to give you a better idea of what that level should include. 
+Use any framework you want to create a movie list app! The levels get increasingly difficult and some refactoring may be necessary. Wireframes accompany each level to give you a better idea of what that level should include. 
 
 ## Level 0
 - [ ] Display a list of movies from hardcoded data.
