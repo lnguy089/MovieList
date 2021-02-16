@@ -1,0 +1,35 @@
+.ls title {
+  margin: 40px;
+  background-color: white;
+  text-align: center;
+  font-weight: bold;
+  font:bold;
+  font-style: italic;
+}
+
+.ls {
+  background: #fff;
+  padding: 8px;
+  border: 0;
+  box-shadow: 0 1px 2px rgba(0,0,0,.1);
+  margin-top: 10px;
+  list-style-type: square;
+  text-align: center;
+}
+
+.link-container h2 {
+  background-color: #abd5ea;
+  color: #333;
+  font-size: 18px;
+  line-height: 30px;
+  margin: 0;
+  padding-left: 10px;
+}
+
+.link-container ul li a {
+  text-decoration: none;
+}
+
+form {
+  text-align: center;
+}
