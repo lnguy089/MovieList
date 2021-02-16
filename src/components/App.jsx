@@ -23,7 +23,7 @@ class App extends React.Component {
   }
   addMovie(movie) {
     this.setState( {
-      titles : [...this.state.titles, movie]
+      titles : [...this.state.titles, movie], unwatchedList: [...this.state.unwatchedList, movie]
     })
   }
   addToWatched(movie) {
@@ -36,14 +36,30 @@ class App extends React.Component {
       unwatchedList: [...this.state.unwatchedList, movie]
     })
   }
+  removeFromUnWatchedWArr(key) {
+    var newArr = [...this.state.unwatchedList];
+    var index = newArr.indexOf(this.state.titles[key]);
+    if (index !== -1) {
+      newArr.splice(index, 1);
+      this.setState({unwatchedList: newArr});
+    }
+  }
+  removeFromWatchedArr(key) {
+    var newArr = [...this.state.watchedList];
+    var index = newArr.indexOf(this.state.titles[key]);
+    if (index !== -1) {
+      newArr.splice(index, 1);
+      this.setState({watchedList: newArr});
+    }
+  }
 
   render() {
     return (
     <h2 className="link-container">
       <Form movies={this.state.titles} searchMovie={this.chooseMovie.bind(this)} addMovie={this.addMovie.bind(this)}/>
       <div className ='ls'>MovieList</div>
-      <Watched movies={this.state.choose} chooseMovies={this.chooseMovie.bind(this)} />
-      <MovieList movieTitle={this.state.choose} addToWatched={this.addToWatched.bind(this)} addToUnWatched={this.addToUnWatched.bind(this)}/>
+      <button>Watched</button> <button onClick={() => showUW}>Unwatched</button>
+      <MovieList movieTitle={this.state.choose} addToWatched={this.addToWatched.bind(this)} addToUnWatched={this.addToUnWatched.bind(this)} removeW={this.removeFromWatchedArr.bind(this)} removeUW={this.removeFromUnWatchedWArr.bind(this)} />
     </h2>
     );
   }
