@@ -2,12 +2,16 @@
   "scripts": {
     "test": "live-server --open=./SpecRunner.html --port=8081",
     "postinstall": "curl -s https://raw.githubusercontent.com/reactorcore/pomander/master/bin/install | bash",
-    "start": "npx babel . --out-dir compiled --presets=@babel/preset-react --ignore=node_modules,compiled --source-maps inline --watch & live-server"
+    "start": " ./node_modules/.bin/babel src --out-dir public/compiled --presets=@babel/preset-react --source-maps inline --watch",
+    "start-server": "nodemon server.js"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "bootstrap": "^4.5.3",
+    "express": "^4.17.1",
     "jquery": "^3.5.1 ",
     "lodash": "^4.17.20",
+    "nodemon": "^2.0.7",
     "prop-types": "^15.7.2",
     "react": "^16.14.0",
     "react-dom": "^16.14.0"
